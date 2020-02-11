@@ -1,8 +1,16 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>{{place.title}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="onCancel()">
+        <ion-icon slot="start" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 <ion-content text-center padding>
   <p>{{place.description}}</p>
+  <ion-button (click)="onBookPlace()">
+    Book
+  </ion-button>
 </ion-content>

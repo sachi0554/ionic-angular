@@ -37,6 +37,12 @@ export class PlaceDetailsPage implements OnInit {
      componentProps: {place: this.place}
     }).then(modelEle => {
     modelEle.present();
+    return modelEle.onDidDismiss();
+   }).then( resultData => {
+      console.log(resultData.data , resultData.role);
+      if(resultData.role === 'confirm') {
+         console.log('Booked');
+      }
    });
   }
 
